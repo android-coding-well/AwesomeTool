@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.huweijian5'
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //auto-service库可以帮我们去生成META-INF等信息
+    compile 'com.google.auto.service:auto-service:1.0-rc3'
+    //用于生成源代码
+    compile 'com.squareup:javapoet:1.8.0'
+    compile project(':lib_annotaiton')
+
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+
+// 指定编码
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+
