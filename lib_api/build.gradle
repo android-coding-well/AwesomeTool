@@ -29,7 +29,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testCompile "junit:junit:$rootProject.junitVersion"
-    compile project(':lib_annotaiton')
+    //compile project(':lib_annotaiton')
 }
 // 指定编码
 tasks.withType(JavaCompile) {
