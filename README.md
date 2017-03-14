@@ -57,6 +57,12 @@ helper.needWorkInMainThread();
 
 ```
 ---
+## 后期目标
+
+* 考虑对方法参数作支持
+* 考虑对返回参数作支持
+
+---
 ## JavaDoc文档
 
 * [在线JavaDoc](https://jitpack.io/com/github/huweijian5/AwesomeTool/1.0.0/javadoc/index.html)
@@ -81,6 +87,7 @@ allprojects {
 ```
 dependencies {
 	        compile 'com.github.huweijian5:AwesomeTool:latest_version'
+		annotationProcessor 'com.github.huweijian5:AwesomeTool-compiler:latest_version'
 }
 ```
 * 其中latest_version请到[releases](https://github.com/huweijian5/AwesomeTool/releases)中查看
