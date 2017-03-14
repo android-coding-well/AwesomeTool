@@ -56,6 +56,12 @@ helper.needWorkInThread();
 helper.needWorkInMainThread();
 
 ```
+
+* 不用时请记得调用quit
+
+```
+helper.quit();
+```
 ---
 ## 后期目标
 
