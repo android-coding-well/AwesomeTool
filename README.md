@@ -2,7 +2,7 @@
 Android线程切换工具
 
 ---
-##介绍说明
+## 介绍说明
 
 曾经使用过AndroidAnnotations,对里面的线程切换方式很是喜欢，使用非常方便，可是由于各种原因，已经不再想使用AndroidAnnotations了，
 但又舍不得这种便捷的方式，于是就实现了自己的线程切换。
@@ -11,7 +11,7 @@ Android线程切换工具
 * 使用AnnotationProcessor插件在编译期生成代码，无性能影响
 
 ---
-##使用说明
+## 使用说明
 
 * 使用@InjectObject声明注入对象,命名则是根据注解所在类的类名加上后缀“Helper”
 ```
@@ -98,7 +98,7 @@ dependencies {
 ```
 * 其中latest_version请到[releases](https://github.com/huweijian5/AwesomeTool/releases)中查看
 
-##注意
+## 注意
 * 为了避免引入第三方库导致工程依赖多个版本的问题，如android support库
 * 故建议在个人的工程目录下的build.gradle下加入以下变量，具体请看此[build.gradle](https://github.com/huweijian5/AwesomeTool/blob/master/build.gradle)
 ```
