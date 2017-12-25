@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             Log.i(TAG, "needWorkInThread2: ");
             Thread.sleep(8000);
-            awesomeThread.needWorkInMainThread2();
+            awesomeThread.needWorkInMainThread2("boy");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -76,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @WorkInMainThread
-    public void needWorkInMainThread2() {
-        binding.tvText.setText("Hello!");
+    public void needWorkInMainThread2(String s) {
+        binding.tvText.setText("Hello,"+s+"!");
     }
 
     public void onClickFrag(View view) {

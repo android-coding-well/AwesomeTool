@@ -12,4 +12,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.CLASS)
 @Target(ElementType.FIELD)
 public @interface InjectObject {
+
+    /**
+     * 线程优先级-20~19,-20代表优先级最高，详见android.os.Process,默认为THREAD_PRIORITY_DEFAULT(0)
+     * @return
+     */
+    int priority() default 0;
 }

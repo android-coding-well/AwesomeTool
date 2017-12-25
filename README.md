@@ -9,6 +9,8 @@ Android线程切换工具
 * 原理很简单，就是使用HandlerThread以及Handler来做线程的切换
 * 加入对注解的支持
 * 使用AnnotationProcessor插件在编译期生成代码，无性能影响
+* 考虑到弱化侵入性，因此通过代理类来实现（这样使得调用方式曲折了一点）
+* 增加对参数的支持
 
 ---
 ## 使用说明
@@ -27,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
 
 ```
 
-* 使用@WorkInBackground和@WorkInMainThread声明方法，其中方法必须是public void xxx(){}格式
+* 使用@WorkInBackground和@WorkInMainThread声明方法，其中方法必须是public void xxx(...){}格式
 
 ```
 @WorkInBackground
-public void needWorkInThread() {
+public void needWorkInThread(String param1,int param2,double param3) {
 //耗时操作
 }
 
@@ -63,10 +65,8 @@ helper.needWorkInMainThread();
 helper.quit();
 ```
 ---
-## 后期目标
-
-* 考虑对方法参数作支持
-* 考虑对返回参数作支持
+## 存在问题
+* 无法进行即时生成，每次都需要手动build,此问题还没思路，待解决
 
 ---
 ## JavaDoc文档

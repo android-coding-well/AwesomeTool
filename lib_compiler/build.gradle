@@ -5,13 +5,14 @@ group='com.github.huweijian5'*/
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     //auto-service库可以帮我们去生成META-INF等信息
-    compile 'com.google.auto.service:auto-service:1.0-rc3'
+    compile 'com.google.auto.service:auto-service:1.0-rc4'
     //用于生成源代码
-    compile 'com.squareup:javapoet:1.8.0'
+    compile 'com.squareup:javapoet:1.9.0'
     compile project(':lib_annotaiton')
 
 }
 
+//只有android N支持java8，如果你写1.8之后，强制要你使用buildToolsVersion为24.0.0
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
 

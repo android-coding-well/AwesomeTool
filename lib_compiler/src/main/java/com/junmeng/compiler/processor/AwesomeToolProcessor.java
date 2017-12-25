@@ -60,8 +60,13 @@ public class AwesomeToolProcessor extends AbstractProcessor {
         return supportTypes;
     }
 
+    /**
+     * 注解处理器支持到的JAVA版本
+     * @return
+     */
     @Override
     public SourceVersion getSupportedSourceVersion() {
+        printMessage("SupportedSourceVersion=%s",SourceVersion.latestSupported().name());
         return SourceVersion.latestSupported();
     }
 
@@ -76,7 +81,7 @@ public class AwesomeToolProcessor extends AbstractProcessor {
         printMessage("AwesomeToolProxyInfo Map size=%d", proxyInfoMap.size());
 
         generateSourceFiles();
-        return true;
+        return false;//如果返回true,当有两个注解作用在同一方法上，那么第一个处理完了之后就不会再处理第二个
     }
 
     /**
@@ -133,9 +138,13 @@ public class AwesomeToolProcessor extends AbstractProcessor {
                 return;
             }
             ExecutableElement variableElement = (ExecutableElement) element;
-            printMessage("WorkInBackground注解的方法名称：" + variableElement.getSimpleName().toString());
+            //printMessage("WorkInBackground注解的方法名称：" + variableElement.getSimpleName().toString());
+            //printMessage("WorkInBackground注解的方法返回类型：" + variableElement.getReturnType().getKind().toString());
+            //printMessage("WorkInBackground注解的方法参数列表：" + variableElement.getParameters().toString());
+
             //get class type
             TypeElement classElement = (TypeElement) variableElement.getEnclosingElement();
+
             //get class full name
             String fqClassName = classElement.getQualifiedName().toString();
             printMessage("WorkInBackground注解所在类的全名：" + fqClassName);
@@ -242,7 +251,7 @@ public class AwesomeToolProcessor extends AbstractProcessor {
         if (args.length > 0) {
             message = String.format(message, args);
         }
-        processingEnv.getMessager().printMessage(Diagnostic.Kind.ERROR, message, element);
+        messager.printMessage(Diagnostic.Kind.ERROR, message, element);
     }
 
     /**
@@ -255,7 +264,7 @@ public class AwesomeToolProcessor extends AbstractProcessor {
         if (args.length > 0) {
             message = String.format(message, args);
         }
-        processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, message);
+        messager.printMessage(Diagnostic.Kind.NOTE, message);
     }
 
 }

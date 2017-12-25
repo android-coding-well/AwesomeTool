@@ -2,11 +2,13 @@ package com.junmeng.aad;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.os.Process;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.junmeng.aad.databinding.FragmentBlankBinding;
 import com.junmeng.annotation.InjectObject;
@@ -17,7 +19,7 @@ import com.junmeng.api.AwesomeTool;
 public class BlankFragment extends Fragment {
     private static final String TAG = "BlankFragment";
     FragmentBlankBinding binding;
-    @InjectObject
+    @InjectObject(priority = Process.THREAD_PRIORITY_AUDIO)
     BlankFragmentHelper blankFragmentHelper;
 
     public BlankFragment() {
@@ -43,7 +45,8 @@ public class BlankFragment extends Fragment {
         binding.tvText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                blankFragmentHelper.needWorkInThread();
+                Toast.makeText(getContext(), "请稍等", Toast.LENGTH_SHORT).show();
+                blankFragmentHelper.needWorkInThread("1234",5,6.7,new Test());
             }
         });
         AwesomeTool.inject(this);
@@ -51,9 +54,9 @@ public class BlankFragment extends Fragment {
     }
 
     @WorkInBackground
-    public void needWorkInThread() {
+    public void needWorkInThread(String str,int i,double d,Test test){
         try {
-            Log.i(TAG, "needWorkInThread: ");
+            Log.i(TAG, "needWorkInThread: "+str+i+d+test.toString());
             Thread.sleep(8000);
             blankFragmentHelper.needWorkInMainThread();
         } catch (InterruptedException e) {

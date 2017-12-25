@@ -3,10 +3,15 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AwesomeTool.iml" filepath="$PROJECT_DIR$/AwesomeTool.iml" />
+      <module fileurl="file://G:\code\github\AwesomeTool\AwesomeTool\AwesomeTool.iml" filepath="G:\code\github\AwesomeTool\AwesomeTool\AwesomeTool.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://G:\code\github\AwesomeTool\AwesomeTool\app\app.iml" filepath="G:\code\github\AwesomeTool\AwesomeTool\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_annotaiton/lib_annotaiton.iml" filepath="$PROJECT_DIR$/lib_annotaiton/lib_annotaiton.iml" />
+      <module fileurl="file://G:\code\github\AwesomeTool\AwesomeTool\lib_annotaiton\lib_annotaiton.iml" filepath="G:\code\github\AwesomeTool\AwesomeTool\lib_annotaiton\lib_annotaiton.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_api/lib_api.iml" filepath="$PROJECT_DIR$/lib_api/lib_api.iml" />
+      <module fileurl="file://G:\code\github\AwesomeTool\AwesomeTool\lib_api\lib_api.iml" filepath="G:\code\github\AwesomeTool\AwesomeTool\lib_api\lib_api.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_compiler/lib_compiler.iml" filepath="$PROJECT_DIR$/lib_compiler/lib_compiler.iml" />
+      <module fileurl="file://G:\code\github\AwesomeTool\AwesomeTool\lib_compiler\lib_compiler.iml" filepath="G:\code\github\AwesomeTool\AwesomeTool\lib_compiler\lib_compiler.iml" />
     </modules>
   </component>
 </project>
