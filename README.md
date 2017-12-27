@@ -1,6 +1,10 @@
 # AwesomeTool
 Android线程切换工具
 
+
+---
+## 实现原理
+(Android编译时注解)[http://blog.csdn.net/huweijian5/article/details/78894527]
 ---
 ## 介绍说明
 
